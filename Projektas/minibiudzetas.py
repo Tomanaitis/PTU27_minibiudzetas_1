@@ -31,8 +31,12 @@ darbuotojai = [
 # Padarę šį, pradinį variantą, prijungiam trynimo funkciją ir paieškos funkciją, loginimą. Trinti per indeksą,
 # pradžioje išvedus turimus duomenis su indekso numeriu, tam galime panaudoti enumerate. Pabandykim
 # bent dalį veiksmų kelti į funkcijas.
-pajamos = []
-islaidos = []
+pajamos = [
+
+]
+islaidos = [
+
+]
 
 while True:
     print("1. Įvesti pajamas \n"
@@ -44,6 +48,8 @@ while True:
     pasirinkimas = input("pasirinkimas:   ")
     if pasirinkimas == "stop":
         print("Programa baigta")
+        print(islaidos)
+        print(pajamos)
         break
     if pasirinkimas == "1":
         data = input("įveskite datą yyyy-mm-dd: ")
@@ -53,4 +59,9 @@ while True:
         pajamos.append([f"data: {data}, pavadinimas: {pavadinimas}, suma: {suma}"])
         print(pajamos)
         continue
-
+    if pasirinkimas == "2":
+        data = input("įveskite datą yyyy-mm-dd: ")
+        pavadinimas = input("įveskite išlaidų pavadinimą: ")
+        suma = input("įveskite išlaidų sumą: ")
+        islaidos.append([f"data: {data}, pavadinimas: {pavadinimas}, suma: {suma}"])
+        print(islaidos)
