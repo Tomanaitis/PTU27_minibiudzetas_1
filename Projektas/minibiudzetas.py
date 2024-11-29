@@ -7,9 +7,9 @@
 # 5. Atspausdinti statistiką
 # q - Išeiti
 
-# Vartotojui leidžiam įvesti tokius duomenis - data(datetime arba tiesiog stringas), pajamų ar išlaidų
-# pavadinimas(pvz. pajamose - avansas, atlyginimas, stipendija ar pan, išlaidose - maistas, įvairūs pirkiniai,
-# būsto išlaidos ir tt) ir suma.
+# Vartotojui leidžiam įvesti tokius duomenis - DATA(datetime arba tiesiog stringas), pajamų ar išlaidų
+# PAVADINIMA(pvz. pajamose - avansas, atlyginimas, stipendija ar pan, išlaidose - maistas, įvairūs pirkiniai,
+# būsto išlaidos ir tt) ir SUMA (SKAICIUS).
 
 # Duomenis saugom listuose.
 # Turime 2 pagrindinius listus - pajamos, islaidos,
@@ -30,7 +30,7 @@ darbuotojai = [
 #
 # Padarę šį, pradinį variantą, prijungiam trynimo funkciją ir paieškos funkciją, loginimą. Trinti per indeksą,
 # pradžioje išvedus turimus duomenis su indekso numeriu, tam galime panaudoti enumerate. Pabandykim
-#  bent dalį veiksmų kelti į funkcijas.
+# bent dalį veiksmų kelti į funkcijas.
 pajamos = []
 islaidos = []
 
@@ -45,5 +45,9 @@ while True:
     if pasirinkimas == "stop":
         print("Programa baigta")
         break
-    # if pasirinkimas == "1":
+    if pasirinkimas == "1":
+        data = input("įveskite datą yyyy-mm-dd: ")
+        pavadinimas = input("įveskite pajamų pavadinimą: ")
+        suma = input("įveskite pajamų sumą: ")
+        print(f"data: {data}, pavadinimas: {pavadinimas}, suma: {suma}")
 
