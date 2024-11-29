@@ -50,4 +50,7 @@ while True:
         pavadinimas = input("įveskite pajamų pavadinimą: ")
         suma = input("įveskite pajamų sumą: ")
         print(f"data: {data}, pavadinimas: {pavadinimas}, suma: {suma}")
+        pajamos.append(f"data: {data}, pavadinimas: {pavadinimas}, suma: {suma}")
+        print(pajamos)
+        continue
 
