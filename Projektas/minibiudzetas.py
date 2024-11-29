@@ -43,8 +43,6 @@ while True:
     pasirinkimas = input("pasirinkimas:   ")
     if pasirinkimas == "stop":
         print("Programa baigta")
-        print(islaidos)
-        print(pajamos)
         break
     if pasirinkimas == "1":
         data = input("įveskite datą yyyy-mm-dd: ")
@@ -67,5 +65,7 @@ while True:
     if pasirinkimas == "5":
         pajamu_suma = sum([elem[2] for elem in pajamos])
         islaidu_suma = sum(elem[2] for elem in islaidos)
-        print(f"Visos pajamos: {pajamu_suma}")
-        print(f"visos išlaidos: {islaidu_suma}")
+        balancas = pajamu_suma - islaidu_suma
+        print(f"Visos pajamos: {pajamu_suma} EUR")
+        print(f"visos išlaidos: {islaidu_suma} EUR")
+        print(f"balancas; {balancas} EUR")
