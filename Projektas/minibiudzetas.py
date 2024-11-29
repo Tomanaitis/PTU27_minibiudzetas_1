@@ -21,7 +21,7 @@ darbuotojai = [
     ["Adomas", "direktorius", 3000],
     ["Aldona", "vadybininkas", 1800],
     ["Jogaila", "programuotojas", 2500],
-
+]
 """
 
 # Programą kuriam naujame Pycharm projekte, iniciavę git repositoriją ir kodą rašom etapais, darydami commit po
@@ -31,12 +31,8 @@ darbuotojai = [
 # Padarę šį, pradinį variantą, prijungiam trynimo funkciją ir paieškos funkciją, loginimą. Trinti per indeksą,
 # pradžioje išvedus turimus duomenis su indekso numeriu, tam galime panaudoti enumerate. Pabandykim
 # bent dalį veiksmų kelti į funkcijas.
-pajamos = [
-
-]
-islaidos = [
-
-]
+pajamos = []
+islaidos = []
 
 while True:
     print("1. Įvesti pajamas \n"
@@ -46,6 +42,7 @@ while True:
           "5. Atspausdinti statistiką\n"
           "stop. baigti programą")
     pasirinkimas = input("pasirinkimas:   ")
+
     if pasirinkimas == "stop":
         print("Programa baigta")
         print(islaidos)
@@ -55,13 +52,20 @@ while True:
         data = input("įveskite datą yyyy-mm-dd: ")
         pavadinimas = input("įveskite pajamų pavadinimą: ")
         suma = input("įveskite pajamų sumą: ")
-        print(f"data: {data}, pavadinimas: {pavadinimas}, suma: {suma}")
-        pajamos.append([f"data: {data}, pavadinimas: {pavadinimas}, suma: {suma}"])
-        print(pajamos)
+        pajamos.append([data, pavadinimas, suma])
+        print("pridėtos pajamos", pajamos[-1])
         continue
     if pasirinkimas == "2":
         data = input("įveskite datą yyyy-mm-dd: ")
         pavadinimas = input("įveskite išlaidų pavadinimą: ")
         suma = input("įveskite išlaidų sumą: ")
-        islaidos.append([f"data: {data}, pavadinimas: {pavadinimas}, suma: {suma}"])
-        print(islaidos)
+        islaidos.append([data, pavadinimas, suma])
+        print("pridėtos išlaidos", islaidos[-1])
+    if pasirinkimas == "3":
+        for elem in pajamos:
+            print(f"data: {elem[0]}, pavadinimas: {elem[1]}, suma: {elem[2]} EUR")
+        continue
+    if pasirinkimas == "4":
+        for elem in islaidos:
+            print(f"data: {elem[0]}, pavadinimas: {elem[1]}, suma: {elem[2]} EUR")
+        continue
