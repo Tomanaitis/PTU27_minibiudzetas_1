@@ -6,6 +6,7 @@
 # 4. Atspausdinti išlaidų eilutes
 # 5. Atspausdinti statistiką
 # q - Išeiti
+
 # Vartotojui leidžiam įvesti tokius duomenis - data(datetime arba tiesiog stringas), pajamų ar išlaidų
 # pavadinimas(pvz. pajamose - avansas, atlyginimas, stipendija ar pan, išlaidose - maistas, įvairūs pirkiniai,
 # būsto išlaidos ir tt) ir suma.
@@ -27,6 +28,10 @@ while True:
           "2. Įvesti išlaidas\n"
           "3. Atspausdinti pajamų eilutes\n"
           "4. Atspausdinti išlaidų eilutes\n"
-          "5. Atspausdinti statistiką")
+          "5. Atspausdinti statistiką\n"
+          "stop. baigti programą")
     pasirinkimas = input("pasirinkimas:   ")
+    if pasirinkimas == "stop":
+        print("Programa baigta")
+        break
     #if pasirinkimas == "1":
