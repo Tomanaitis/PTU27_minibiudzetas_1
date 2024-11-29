@@ -10,26 +10,17 @@
 # Vartotojui leidžiam įvesti tokius duomenis - DATA(datetime arba tiesiog stringas), pajamų ar išlaidų
 # PAVADINIMA(pvz. pajamose - avansas, atlyginimas, stipendija ar pan, išlaidose - maistas, įvairūs pirkiniai,
 # būsto išlaidos ir tt) ir SUMA (SKAICIUS).
-
 # Duomenis saugom listuose.
 # Turime 2 pagrindinius listus - pajamos, islaidos,
 # juose saugom vidinius listus(kaip paskaitose pavyzdys su listu darbuotojai).
-"""
-f06_sudetiniai_listai
-darbuotojai = [
-    ["Valdas", "programuotojas", 2000],
-    ["Adomas", "direktorius", 3000],
-    ["Aldona", "vadybininkas", 1800],
-    ["Jogaila", "programuotojas", 2500],
-]
-"""
-
 # Programą kuriam naujame Pycharm projekte, iniciavę git repositoriją ir kodą rašom etapais, darydami commit po
 # kiekvieno etapo, pvz sukuriam vartotojo meniu, toliau vystom funkcionalumą kiekvienam meniu punktui.
+
+
 # Reikėtų panaudoti bent vieną savo parašytą funkciją iškeltą į kitą failą ir importuojamą į pagrindinę programą.
 #
 # Padarę šį, pradinį variantą, prijungiam trynimo funkciją ir paieškos funkciją, loginimą. Trinti per indeksą,
-# pradžioje išvedus turimus duomenis su indekso numeriu, tam galime panaudoti enumerate. Pabandykim
+# pradžioje išvedus turimus duomenis su indekso numeriu, tam galime panaudoti ENUMERATE. Pabandykim
 # bent dalį veiksmų kelti į funkcijas.
 pajamos = []
 islaidos = []
@@ -39,6 +30,8 @@ while True:
           "3. Atspausdinti pajamų eilutes\n"
           "4. Atspausdinti išlaidų eilutes\n"
           "5. Atspausdinti statistiką\n"
+          "6. trynimo funkciją\n"
+          "7. paieškos funkciją\n"
           "stop. baigti programą")
     pasirinkimas = input("pasirinkimas:   ")
     if pasirinkimas == "stop":
@@ -69,3 +62,11 @@ while True:
         print(f"Visos pajamos: {pajamu_suma} EUR")
         print(f"visos išlaidos: {islaidu_suma} EUR")
         print(f"balancas; {balancas} EUR")
+    # if pasirinkimas == "6":
+
+file = open("logginimas.txt", mode="w")
+file.write(f"Visos įrasšytos pajamos: {pajamos}")
+file.write(f"Visos įrašytos išlaidos: {islaidos}")
+# file.write(f"Pajamų suma: {pajamu_suma} EUR")
+# file.write(f"Išlaidų suma: {islaidu_suma} EUR")
+# file.write(f"balancas: {balancas} EUR")
