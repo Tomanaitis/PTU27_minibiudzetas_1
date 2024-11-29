@@ -33,7 +33,6 @@ darbuotojai = [
 # bent dalį veiksmų kelti į funkcijas.
 pajamos = []
 islaidos = []
-
 while True:
     print("1. Įvesti pajamas \n"
           "2. Įvesti išlaidas\n"
@@ -42,7 +41,6 @@ while True:
           "5. Atspausdinti statistiką\n"
           "stop. baigti programą")
     pasirinkimas = input("pasirinkimas:   ")
-
     if pasirinkimas == "stop":
         print("Programa baigta")
         print(islaidos)
@@ -51,21 +49,23 @@ while True:
     if pasirinkimas == "1":
         data = input("įveskite datą yyyy-mm-dd: ")
         pavadinimas = input("įveskite pajamų pavadinimą: ")
-        suma = input("įveskite pajamų sumą: ")
+        suma = float(input("įveskite pajamų sumą: "))
         pajamos.append([data, pavadinimas, suma])
         print("pridėtos pajamos", pajamos[-1])
-        continue
     if pasirinkimas == "2":
         data = input("įveskite datą yyyy-mm-dd: ")
         pavadinimas = input("įveskite išlaidų pavadinimą: ")
-        suma = input("įveskite išlaidų sumą: ")
+        suma = float(input("įveskite išlaidų sumą: "))
         islaidos.append([data, pavadinimas, suma])
         print("pridėtos išlaidos", islaidos[-1])
     if pasirinkimas == "3":
         for elem in pajamos:
             print(f"data: {elem[0]}, pavadinimas: {elem[1]}, suma: {elem[2]} EUR")
-        continue
     if pasirinkimas == "4":
         for elem in islaidos:
             print(f"data: {elem[0]}, pavadinimas: {elem[1]}, suma: {elem[2]} EUR")
-        continue
+    if pasirinkimas == "5":
+        pajamu_suma = sum([elem[2] for elem in pajamos])
+        islaidu_suma = sum(elem[2] for elem in islaidos)
+        print(f"Visos pajamos: {pajamu_suma}")
+        print(f"visos išlaidos: {islaidu_suma}")
