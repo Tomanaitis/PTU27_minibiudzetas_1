@@ -14,6 +14,15 @@
 # Duomenis saugom listuose.
 # Turime 2 pagrindinius listus - pajamos, islaidos,
 # juose saugom vidinius listus(kaip paskaitose pavyzdys su listu darbuotojai).
+"""
+f06_sudetiniai_listai
+darbuotojai = [
+    ["Valdas", "programuotojas", 2000],
+    ["Adomas", "direktorius", 3000],
+    ["Aldona", "vadybininkas", 1800],
+    ["Jogaila", "programuotojas", 2500],
+
+"""
 
 # Programą kuriam naujame Pycharm projekte, iniciavę git repositoriją ir kodą rašom etapais, darydami commit po
 # kiekvieno etapo, pvz sukuriam vartotojo meniu, toliau vystom funkcionalumą kiekvienam meniu punktui.
@@ -22,6 +31,8 @@
 # Padarę šį, pradinį variantą, prijungiam trynimo funkciją ir paieškos funkciją, loginimą. Trinti per indeksą,
 # pradžioje išvedus turimus duomenis su indekso numeriu, tam galime panaudoti enumerate. Pabandykim
 #  bent dalį veiksmų kelti į funkcijas.
+pajamos = []
+islaidos = []
 
 while True:
     print("1. Įvesti pajamas \n"
@@ -34,4 +45,5 @@ while True:
     if pasirinkimas == "stop":
         print("Programa baigta")
         break
-    #if pasirinkimas == "1":
+    # if pasirinkimas == "1":
+
