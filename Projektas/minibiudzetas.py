@@ -22,6 +22,8 @@
 # Padarę šį, pradinį variantą, prijungiam trynimo funkciją ir paieškos funkciją, loginimą. Trinti per indeksą,
 # pradžioje išvedus turimus duomenis su indekso numeriu, tam galime panaudoti ENUMERATE. Pabandykim
 # bent dalį veiksmų kelti į funkcijas.
+import pickle
+
 pajamos = []
 islaidos = []
 while True:
@@ -64,9 +66,17 @@ while True:
         print(f"balancas; {balancas} EUR")
     # if pasirinkimas == "6":
 
-file = open("logginimas.txt", mode="w")
-file.write(f"Visos įrasšytos pajamos: {pajamos}")
-file.write(f"Visos įrašytos išlaidos: {islaidos}")
+filas = open("logginimas.txt", mode="w", encoding="utf-8")
+filas.write(f"Visos įrasšytos pajamos: {pajamos}\n")
+filas.write(f"Visos įrašytos išlaidos: {islaidos}\n")
 # file.write(f"Pajamų suma: {pajamu_suma} EUR")
 # file.write(f"Išlaidų suma: {islaidu_suma} EUR")
 # file.write(f"balancas: {balancas} EUR")
+
+with open("pajamos.pickle", mode="wb") as file:
+    # noinspection PyTypeChecker
+    pickle.dump(pajamos, file)
+
+with open("pajamos.pickle", mode="wb") as file:
+    # noinspection PyTypeChecker
+    pickle.dump(islaidos, file)
