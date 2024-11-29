@@ -77,6 +77,6 @@ with open("pajamos.pickle", mode="wb") as file:
     # noinspection PyTypeChecker
     pickle.dump(pajamos, file)
 
-with open("pajamos.pickle", mode="wb") as file:
+with open("islaidos.pickle", mode="wb") as file:
     # noinspection PyTypeChecker
     pickle.dump(islaidos, file)
