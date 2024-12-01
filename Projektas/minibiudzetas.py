@@ -7,7 +7,6 @@
 # 5. Atspausdinti statistiką
 # q - Išeiti
 
-
 # Vartotojui leidžiam įvesti tokius duomenis - DATA(datetime arba tiesiog stringas), pajamų ar išlaidų
 # PAVADINIMA(pvz. pajamose - avansas, atlyginimas, stipendija ar pan, išlaidose - maistas, įvairūs pirkiniai,
 # būsto išlaidos ir tt) ir SUMA (SKAICIUS).
@@ -17,15 +16,28 @@
 # Programą kuriam naujame Pycharm projekte, iniciavę git repositoriją ir kodą rašom etapais, darydami commit po
 # kiekvieno etapo, pvz sukuriam vartotojo meniu, toliau vystom funkcionalumą kiekvienam meniu punktui.
 
-
 # Reikėtų panaudoti bent vieną savo parašytą funkciją iškeltą į kitą failą ir importuojamą į pagrindinę programą.
-#
 # Padarę šį, pradinį variantą, prijungiam trynimo funkciją ir paieškos funkciją, loginimą # LOGGINIMAS YRA P15 logging.
 # Trinti per indeksą,
 # pradžioje išvedus turimus duomenis su indekso numeriu, tam galime panaudoti ENUMERATE. Pabandykim
 # bent dalį veiksmų kelti į funkcijas.
-import datetime
+###################################################################################################################
+"""
+Mano užduotys:
 
+sutvarkyti iki galo laiką, kad būtent tokio laiko formatą galima būtų vesti, o ne betką
+
+panaudoti pickle biblioteką su nauju didžiuoju listu # biudzetas = [pajamos, islaidos] picklui uzkrauti
+
+5 sutvarkyti į def funkciją ir įkelti i savo biblioteką tada arba importuoti printą arba visą funkciją
+
+panaudoti logginimą
+
+optimizuoti codą
+
+"""
+###################################################################################################################
+import datetime
 # import pickle
 
 # with open("pajamos.pickle", mode="wb") as file:
@@ -40,7 +52,7 @@ import datetime
 # biudzetas = [pajamos, islaidos] picklui uzkrauti
 pajamos = []
 islaidos = []
-meniu_pasirinkimai = ["1", "2", "3", "4", "5", "6", "7", "stop"]
+
 
 while True:
     print("1. Įvesti pajamas \n"
@@ -53,9 +65,9 @@ while True:
           "stop. baigti programą")
     pasirinkimas = input("pasirinkimas: ")
     data = None
-    if pasirinkimas not in meniu_pasirinkimai:
-        print("pasirinkimas neegzistuoja, bandykite dar kartą ")
-        continue
+    # if pasirinkimas not in meniu_pasirinkimai:
+    #     print("pasirinkimas neegzistuoja, bandykite dar kartą ")
+    #     continue
     if pasirinkimas == "stop":
         print("Programa baigta")
         break
@@ -65,7 +77,7 @@ while True:
                   "2. įvesti dabartinį laiką")
             laiko_pasirinkimas = input("Laiko įvedimo pasirinkimas: ")
             if laiko_pasirinkimas == "1":
-                data = input("įveskite datą yyyy-mm-dd: ")
+                data = int(input("įveskite datą yyyy-mm-dd: "))
                 print(f"Įvestas laikas: {data}")
                 break
             if laiko_pasirinkimas == "2":
@@ -81,7 +93,22 @@ while True:
         pajamos.append([data, pavadinimas, suma])
         print("pridėtos pajamos", pajamos[-1])
     if pasirinkimas == "2":
-        data = input("įveskite datą yyyy-mm-dd: ")
+        while True:
+            print("1. įvesti savo laiką\n"
+                  "2. įvesti dabartinį laiką")
+            laiko_pasirinkimas = input("Laiko įvedimo pasirinkimas: ")
+            if laiko_pasirinkimas == "1":
+                data = int(input("įveskite datą yyyy-mm-dd: "))
+                print(f"Įvestas laikas: {data}")
+                break
+            if laiko_pasirinkimas == "2":
+                dabartinis_laikas = datetime.datetime.now()
+                data = dabartinis_laikas.strftime("%Y-%m-%d %H:%M:%S")
+                print(f"dabartinis laikas: {data}")
+                break
+            else:
+                print(f"pasirinkimas neegzistuoja, bandykite išnaujo")
+                continue
         pavadinimas = input("įveskite išlaidų pavadinimą: ")
         suma = float(input("įveskite išlaidų sumą: "))
         islaidos.append([data, pavadinimas, suma])
@@ -99,5 +126,8 @@ while True:
         print(f"Visos pajamos: {pajamu_suma} EUR")
         print(f"visos išlaidos: {islaidu_suma} EUR")
         print(f"balancas; {balancas} EUR")
+    else:
+        print(f"pasirinkimas {pasirinkimas} neegzistuoja. Bandykite išnaujo")
+        continue
     # if pasirinkimas == "6":
 # LOGGINIMAS YRA P15 logging
